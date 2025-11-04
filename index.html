@@ -22,12 +22,26 @@
 
         /* divide main viewport */
         #side-panel {
-            flex-basis: 500px;
+            position: absolute;  /* Float on map */
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 100%;
+            background: rgb(226, 237, 227);
             overflow-y: scroll;
+            padding: 10px;
+            z-index: 1;  /* above map */
         }
 
         #map {
-            flex-grow: 1;
+            height: 100%;
+            width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+            #side-panel {
+            display: none;
+            }
         }
 
         /* 10px margin button */
@@ -59,7 +73,7 @@
    <main id="container">
        <div id="side-panel">
 
-           <h2>List of Beach Parks to watch sunsets in Seattle</h2>
+           <h2>List of Beach Parks to Watch Sunsets in Seattle</h2>
            <button>Sort by Elevation</button>
 
            <table>
@@ -80,7 +94,7 @@
         let map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/outdoors-v12', // style: mapbox outdoors
-            zoom: 5.5, // starting zoom
+            zoom: 10.5, // starting zoom
             center: [-122.33, 47.60] // starting center OF SEATTLE **
         });
 
@@ -88,22 +102,22 @@
         async function geojsonFetch() {
             let response, parks, seattle, table;
             response = await fetch('assets/seattle_sunset_beachParks.geojson'); //change to my geojson **
-            earthquakes = await response.json();
+            parks = await response.json();
             response = await fetch('assets/seattle.geojson'); //change to my geojson **
-            japan = await response.json();
+            seattle = await response.json();
 
             //load data to the map as new layers and table on the side.
             map.on('load', function loadingData() {
 
-                map.addSource('earthquakes', {
+                map.addSource('parks', {
                     type: 'geojson',
-                    data: earthquakes
+                    data: parks
                 });
 
                 map.addLayer({
-                    'id': 'earthquakes-layer',
+                    'id': 'parks-layer',
                     'type': 'circle',
-                    'source': 'earthquakes',
+                    'source': 'parks',
                     'paint': {
                         'circle-radius': 8,
                         'circle-stroke-width': 2,
@@ -112,15 +126,15 @@
                     }
                 });
 
-                map.addSource('japan', {
+                map.addSource('seattle', {
                     type: 'geojson',
-                    data: japan
+                    data: seattle
                 });
 
                 map.addLayer({
-                    'id': 'japan-layer',
+                    'id': 'seattle-layer',
                     'type': 'fill',
-                    'source': 'japan',
+                    'source': 'seattle',
                     'paint': {
                         'fill-color': '#0080ff', // blue color fill
                         'fill-opacity': 0.5
@@ -132,16 +146,15 @@
             //generate table
             table = document.getElementsByTagName("table")[0];
             let row, cell1, cell2, cell3;
-            for (let i = 0; i < earthquakes.features.length; i++) {
+            for (let i = 0; i < parks.features.length; i++) {
                 // Create an empty <tr> element and add it to the 1st position of the table:
                 row = table.insertRow(-1);
                 cell1 = row.insertCell(0);
                 cell2 = row.insertCell(1);
                 cell3 = row.insertCell(2);
-                cell1.innerHTML = earthquakes.features[i].properties.name;
-                cell2.innerHTML = earthquakes.features[i].properties.elevation_meters;
-                cell3.innerHTML = new Date(earthquakes.features[i].properties.notes).toLocaleDateString(
-                    "en-US");
+                cell1.innerHTML = parks.features[i].properties.name;
+                cell2.innerHTML = parks.features[i].properties.elevation_meters;
+                cell3.innerHTML = parks.features[i].properties.notes;
             }
 
             //sort table
