@@ -1,0 +1,175 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Golden Gardens Park Beach",
+        "waterbody": "Puget Sound",
+        "west_facing": true,
+        "notes": "Classic sunset spot with wide sandy beach and views of the Olympic Mountains.",
+        "elevation_meters": 31
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4029,
+          47.6913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Carkeek Park Beach",
+        "waterbody": "Puget Sound",
+        "west_facing": true,
+        "notes": "Pebbly beach north of Golden Gardens; sunsets over the Sound.",
+        "elevation_meters": 107
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3769,
+          47.711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Discovery Park \u2013 West Point Lighthouse Beach",
+        "waterbody": "Puget Sound",
+        "west_facing": true,
+        "notes": "Iconic lighthouse with unobstructed sunset views.",
+        "elevation_meters": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4435,
+          47.6602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Discovery Park \u2013 South Beach",
+        "waterbody": "Puget Sound",
+        "west_facing": true,
+        "notes": "Quieter stretch on the south side with excellent golden-hour light.",
+        "elevation_meters": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.445,
+          47.6568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Alki Beach Park",
+        "waterbody": "Puget Sound",
+        "west_facing": true,
+        "notes": "Long sandy beach; classic West Seattle sunset promenade.",
+        "elevation_meters": 42
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4059,
+          47.5819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lincoln Park Beach",
+        "waterbody": "Puget Sound",
+        "west_facing": true,
+        "notes": "Forest-to-beach trails with ferry views and sunsets.",
+        "elevation_meters": 41
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3935,
+          47.5317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lowman Beach Park",
+        "waterbody": "Puget Sound",
+        "west_facing": true,
+        "notes": "Restored pocket beach; great colors at dusk.",
+        "elevation_meters": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3969,
+          47.5339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Myrtle Edwards Park Shoreline",
+        "waterbody": "Elliott Bay / Puget Sound",
+        "west_facing": true,
+        "notes": "Waterfront path with pier/pocket beach areas facing the sunset.",
+        "elevation_meters": 62
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3565,
+          47.6186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Olympic Sculpture Park Pocket Beach",
+        "waterbody": "Elliott Bay / Puget Sound",
+        "west_facing": true,
+        "notes": "Small sandy cove below the Sculpture Park; great for photos.",
+        "elevation_meters": 81
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3544,
+          47.6159
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Seacrest Park",
+        "waterbody": "Elliott Bay / Puget Sound",
+        "west_facing": true,
+        "notes": "Harbor and skyline views; small beach/shore access near the water taxi.",
+        "elevation_meters": 95
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3712,
+          47.5755
+        ]
+      }
+    }
+  ]
+}
